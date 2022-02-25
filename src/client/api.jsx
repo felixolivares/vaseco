@@ -1,4 +1,5 @@
 import {Constants} from '../common';
+import Amplify, { API } from 'aws-amplify';
 const axios = require('axios').default;
 
 export const getWeeksPDF = async (object) => {
@@ -32,4 +33,17 @@ export const getWeeksPDF = async (object) => {
   } catch (err){
     console.error(err);
   }
+}
+
+export const postWeekPDF = async(object) => { 
+    const apiName = 'apivaseco';
+    const path = '/item';
+    const myInit = { // OPTIONAL
+        body: {
+          curp: object.curp,
+          ssn: object.ssn
+        }, // replace this with attributes you need
+    };
+
+    return await API.post(apiName, path, myInit);
 }
