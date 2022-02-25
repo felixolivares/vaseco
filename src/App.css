@@ -18,6 +18,15 @@ button {
   border: none;
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+span {
+  font-family: var(--font-family);
+}
+
 .App {
   text-align: center;
   justify-content: center;

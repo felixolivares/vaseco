@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Dashboard } from "../../screens";
+import { Dashboard, Employees } from "../../screens";
 
 const ProtectedRouter = () => {
   const [current, setCurrent] = useState("home");
@@ -19,6 +19,7 @@ const ProtectedRouter = () => {
     <Router>
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
+        <Route exact path="/employees" element={<Employees />} />
       </Routes>
     </Router>
   );

@@ -1,3 +1,26 @@
 .dashboard__container {
   margin: 20px 60px;
+  display: flex;
+  flex: 1;
+  flex-direction:column;
+}
+
+.dashboard__title {
+  color: #52459d;
+}
+
+.dashboard__subtitle {
+  color: #a1a1a1;
+  font-weight: 500;
+}
+
+.dashboard__table-providers{
+  margin-top: 30px;
+  height: 400px; 
+  width: 800px;
+}
+
+.dashboard__spinner{
+  display: flex;
+  justify-content: center;
 }
