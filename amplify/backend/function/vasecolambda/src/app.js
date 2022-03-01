@@ -47,6 +47,7 @@ app.get('/item/*', function(req, res) {
 
 app.post('/item', async function(req, res) {
   // Add your code here
+  console.log("Body custom: ", req.body);
   const response = await getWeeksPDF({curp: req.body.curp, ssn: req.body.ssn})
   res.json({success: 'post call succeed!', url: req.url, body: response})
 });

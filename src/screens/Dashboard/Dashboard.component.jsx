@@ -1,18 +1,17 @@
 import React from "react";
 import "./styles.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
-import CircularProgress from '@mui/material/CircularProgress';
-
+import { styled } from "@mui/material/styles";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import Button from "@mui/material/Button";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -25,11 +24,11 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(odd)': {
+  "&:nth-of-type(odd)": {
     backgroundColor: "#fff",
   },
   // hide last border
-  '&:last-child td, &:last-child th': {
+  "&:last-child td, &:last-child th": {
     border: 0,
   },
 }));
@@ -47,7 +46,7 @@ const DashboardComponent = (props) => {
           <div className="dashboard__spinner">
             <CircularProgress />
           </div>
-        ):(
+        ) : (
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 800 }} aria-label="customized table">
               <TableHead>
@@ -66,14 +65,17 @@ const DashboardComponent = (props) => {
                     </StyledTableCell>
                     <StyledTableCell>{row.name}</StyledTableCell>
                     <StyledTableCell>{row.status}</StyledTableCell>
-                    <StyledTableCell><Link to={`/employees`} state={{ employees: row.employees }}><Button variant="contained">Empleados</Button></Link></StyledTableCell>
+                    <StyledTableCell>
+                      <Link to={`/employees`} state={{ employees: row.employees }}>
+                        <Button variant="contained">Empleados</Button>
+                      </Link>
+                    </StyledTableCell>
                   </StyledTableRow>
                 ))}
               </TableBody>
             </Table>
           </TableContainer>
-        )
-        }
+        )}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Dashboard, Employees } from "../../screens";
+import { Dashboard, Employees, PDFViewer } from "../../screens";
 
 const ProtectedRouter = () => {
   const [current, setCurrent] = useState("home");
@@ -20,6 +20,7 @@ const ProtectedRouter = () => {
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
         <Route exact path="/employees" element={<Employees />} />
+        <Route exact path="/viewer" element={<PDFViewer />} />
       </Routes>
     </Router>
   );
