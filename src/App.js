@@ -24,8 +24,8 @@ const Home = () => {
   return (
     <main>
       <div className='app__container'>
-        <Sidebar signOut={signOut} />
-        <ProtectedRouter />
+        
+        <ProtectedRouter signOut={ signOut}/>
       </div>
     </main>
   );

@@ -84,9 +84,18 @@
 }
 
 .sidebar__item-text {
+  visibility: visible;
   font-family: var(--font-family);
   padding-left: 10px;
+  transition: visibility 0s 0.2s, opacity 0.2s linear;
 }
+
+.sidebar__item-text.inactive {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.2s, opacity 0.2s linear;
+}
+
 .sidebar__item-image {
   height: 25px;
 }

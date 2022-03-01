@@ -12,7 +12,8 @@ let base64String =
 const pdfContentType = "application/pdf";
 
 const PDFViewer = (props) => {
-  const [pdfURL, setPdfURL] = useState("blob:http://localhost:3000/33wssd");
+  const [pdfURL, setPdfURL] = useState("blob:");
+  const [isLoading, setIsLoading] = useState(false);
   const location = useLocation([]);
   const { curp, ssn } = location.state;
 
@@ -49,7 +50,7 @@ const PDFViewer = (props) => {
 
   return (
     <div>
-      <PDFViewerComponent pdfURL={pdfURL} />
+      <PDFViewerComponent pdfURL={pdfURL} isLoading={isLoading} />
     </div>
   );
 };

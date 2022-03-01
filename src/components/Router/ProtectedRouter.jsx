@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Dashboard, Employees, PDFViewer } from "../../screens";
-
-const ProtectedRouter = () => {
+import { Sidebar } from "..";
+const ProtectedRouter = (props) => {
+  const { signOut } = props;
   const [current, setCurrent] = useState("home");
   useEffect(() => {
     setRoute();
@@ -17,6 +18,7 @@ const ProtectedRouter = () => {
   }
   return (
     <Router>
+      <Sidebar signOut={signOut} />
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
         <Route exact path="/employees" element={<Employees />} />
